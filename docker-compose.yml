@@ -1,0 +1,25 @@
+
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: Supermecado   
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: "Super"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+    
+    ports:
+      - "3307:3306"  
+
+    volumes:
+      - "//c/Users/Lenovo/Desktop/Supermecado/Supermecado_yml/Taller:/var/lib/mysql"
+      - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
+
+
+
+
+ 
